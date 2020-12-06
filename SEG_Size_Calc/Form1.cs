@@ -60,7 +60,7 @@ namespace SEG_Size_Calc
 
         private void button1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Wen Bo <wenbo222@gmail.com>\nv0.1, 20200816", "About");
+            MessageBox.Show("Wen Bo <wenbo222#gmail.com>\nv0.1, 20200816", "About");
         }
 
         private void button2_Click(object sender, EventArgs e)
