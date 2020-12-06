@@ -65,7 +65,7 @@ namespace SEG_Size_Calc
 
         private void button2_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Use the default value if you don't know the meaning of that entry.", "Readme21");
+            MessageBox.Show("Use the default value if you don't know the meaning of that entry.", "Readme211");
         }
     }
 }
