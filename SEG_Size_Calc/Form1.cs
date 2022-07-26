@@ -22,16 +22,16 @@ namespace SEG_Size_Calc
         {
             double recordingLength = Convert.ToDouble(textBoxRecordingLength.Text);
             double sampleRate = Convert.ToDouble(textBoxSampleRate.Text);
-            long noStreamers = Convert.ToInt32(textBoxNoStreamers.Text);
-            long chanPerStreamer = Convert.ToInt32(textBoxChannelsPerStreamer.Text);
-            long noAuxChannels = Convert.ToInt32(textBoxNoAuxChannels.Text);
-            long generalHeaderLength = Convert.ToInt32(textBoxNoGeneralHeader.Text);
-            long extendedHeaderLength = Convert.ToInt32(textBoxExtendedHeaderLength.Text);
-            long externalHeaderLength = Convert.ToInt32(textBoxExternalHeaderLength.Text);
-            long noChannelSet = Convert.ToInt32(textBoxNoChannelSets.Text);
-            long noShots = Convert.ToInt32(textBoxNoShots.Text);
-            long noSamples =Convert.ToInt64( recordingLength / sampleRate);
-            long filesize;
+            ulong noStreamers = Convert.ToUInt64(textBoxNoStreamers.Text);
+            ulong chanPerStreamer = Convert.ToUInt64(textBoxChannelsPerStreamer.Text);
+            ulong noAuxChannels = Convert.ToUInt64(textBoxNoAuxChannels.Text);
+            ulong generalHeaderLength = Convert.ToUInt64(textBoxNoGeneralHeader.Text);
+            ulong extendedHeaderLength = Convert.ToUInt64(textBoxExtendedHeaderLength.Text);
+            ulong externalHeaderLength = Convert.ToUInt64(textBoxExternalHeaderLength.Text);
+            ulong noChannelSet = Convert.ToUInt64(textBoxNoChannelSets.Text);
+            ulong noShots = Convert.ToUInt64(textBoxNoShots.Text);
+            ulong noSamples =Convert.ToUInt64( recordingLength / sampleRate);
+            ulong filesize;
             if (radioButton1.Checked)
             {
                 filesize = noShots * (((noSamples + 1) * 4 + 20 + 32 * 7) * (chanPerStreamer * noStreamers + noAuxChannels) + generalHeaderLength * 32 + extendedHeaderLength + externalHeaderLength + noChannelSet * 32);
@@ -72,7 +72,7 @@ namespace SEG_Size_Calc
 
         }
 
-        string FileSizeReadable(long fileLengthInByte)
+        string FileSizeReadable(ulong fileLengthInByte)
         {
             string[] suf = { "B", "KB", "MB", "GB", "TB", "PB", "EB" }; //Longs run out around EB
             uint place = Convert.ToUInt32(Math.Floor(Math.Log(fileLengthInByte, 1024)));
