@@ -12,12 +12,10 @@ namespace SEG_Size_Calc
 {
     public partial class segFileSizeCalculation : Form
     {
-
         public segFileSizeCalculation()
         {
             InitializeComponent();
         }
-
         private void buttonCalculation_Click(object sender, EventArgs e)
         {
             double recordingLength = Convert.ToDouble(textBoxRecordingLength.Text);
@@ -50,7 +48,6 @@ namespace SEG_Size_Calc
             textBoxFileSize.Text = filesize.ToString();
             textBoxFileSizeReadable.Text = FileSizeReadable(filesize);
         }
-
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
         {
             textBoxNoGeneralHeader.Visible = false;
@@ -60,7 +57,6 @@ namespace SEG_Size_Calc
             checkBoxIncludeEBCDICBinHdr.Visible = true;
             textBoxNoAuxChannels.Text = "0";
         }
-
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
             textBoxNoGeneralHeader.Visible = true;
@@ -71,7 +67,6 @@ namespace SEG_Size_Calc
             textBoxNoAuxChannels.Text = "7";
 
         }
-
         string FileSizeReadable(ulong fileLengthInByte)
         {
             string[] suf = { "B", "KB", "MB", "GB", "TB", "PB", "EB" }; //Longs run out around EB
@@ -79,12 +74,10 @@ namespace SEG_Size_Calc
             double fileLengthReadable = Math.Round(fileLengthInByte / Math.Pow(1024, place), 3);//3位小数
             return fileLengthReadable + " " + suf[place];
         }
-
         private void button1_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Wen Bo <wenbo222@gmail.com>\nv0.1, 20200816", "About");
         }
-
         private void button2_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Use the default value if you don't know the meaning of that entry.", "Readme211dev");
