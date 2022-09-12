@@ -65,7 +65,6 @@ namespace SEG_Size_Calc
             textBoxNoChannelSets.Visible = true;
             checkBoxIncludeEBCDICBinHdr.Visible = false;
             textBoxNoAuxChannels.Text = "7";
-
         }
         string FileSizeReadable(ulong fileLengthInByte)
         {
