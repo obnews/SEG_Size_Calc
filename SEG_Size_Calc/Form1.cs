@@ -22,27 +22,28 @@ namespace SEG_Size_Calc
             double sampleRate = Convert.ToDouble(textBoxSampleRate.Text);
             ulong noStreamers = Convert.ToUInt64(textBoxNoStreamers.Text);
             ulong chanPerStreamer = Convert.ToUInt64(textBoxChannelsPerStreamer.Text);
+            ulong noOfAdditionalChan = Convert.ToUInt64(textBoxNoOfAdditionalChan.Text);
             ulong noAuxChannels = Convert.ToUInt64(textBoxNoAuxChannels.Text);
             ulong generalHeaderLength = Convert.ToUInt64(textBoxNoGeneralHeader.Text);
             ulong extendedHeaderLength = Convert.ToUInt64(textBoxExtendedHeaderLength.Text);
             ulong externalHeaderLength = Convert.ToUInt64(textBoxExternalHeaderLength.Text);
             ulong noChannelSet = Convert.ToUInt64(textBoxNoChannelSets.Text);
             ulong noShots = Convert.ToUInt64(textBoxNoShots.Text);
-            ulong noSamples =Convert.ToUInt64( recordingLength / sampleRate);
+            ulong noSamples = Convert.ToUInt64(recordingLength / sampleRate);
             ulong filesize;
             if (radioButton1.Checked)
             {
-                filesize = noShots * (((noSamples + 1) * 4 + 20 + 32 * 7) * (chanPerStreamer * noStreamers + noAuxChannels) + generalHeaderLength * 32 + extendedHeaderLength + externalHeaderLength + noChannelSet * 32);
+                filesize = noShots * (((noSamples + 1) * 4 + 20 + 32 * 7) * ((chanPerStreamer) * noStreamers + noOfAdditionalChan + noAuxChannels) + generalHeaderLength * 32 + extendedHeaderLength + externalHeaderLength + noChannelSet * 32);
             }
             else
             {
                 if (checkBoxIncludeEBCDICBinHdr.Checked)
                 {
-                    filesize = 3200 + 400 + noShots * ((noSamples + 1) * 4 + 240) * (chanPerStreamer * noStreamers + noAuxChannels);
+                    filesize = 3200 + 400 + noShots * ((noSamples + 1) * 4 + 240) * ((chanPerStreamer * noStreamers) + noOfAdditionalChan + noAuxChannels);
                 }
                 else
                 {
-                    filesize = noShots * ((noSamples + 1) * 4 + 240) * (chanPerStreamer * noStreamers + noAuxChannels);
+                    filesize = noShots * ((noSamples + 1) * 4 + 240) * ((chanPerStreamer * noStreamers) + noOfAdditionalChan + noAuxChannels);
                 }
             }
             textBoxFileSize.Text = filesize.ToString();

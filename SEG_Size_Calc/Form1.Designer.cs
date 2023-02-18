@@ -55,6 +55,8 @@
             this.label12 = new System.Windows.Forms.Label();
             this.textBoxFileSizeReadable = new System.Windows.Forms.TextBox();
             this.checkBoxIncludeEBCDICBinHdr = new System.Windows.Forms.CheckBox();
+            this.textBoxNoOfAdditionalChan = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -367,11 +369,32 @@
             this.checkBoxIncludeEBCDICBinHdr.UseVisualStyleBackColor = true;
             this.checkBoxIncludeEBCDICBinHdr.Visible = false;
             // 
+            // textBoxNoOfAdditionalChan
+            // 
+            this.textBoxNoOfAdditionalChan.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.textBoxNoOfAdditionalChan.Location = new System.Drawing.Point(574, 121);
+            this.textBoxNoOfAdditionalChan.Name = "textBoxNoOfAdditionalChan";
+            this.textBoxNoOfAdditionalChan.Size = new System.Drawing.Size(52, 23);
+            this.textBoxNoOfAdditionalChan.TabIndex = 33;
+            this.textBoxNoOfAdditionalChan.Text = "0";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label13.Location = new System.Drawing.Point(444, 124);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(128, 17);
+            this.label13.TabIndex = 32;
+            this.label13.Text = "# of Additional Chan";
+            // 
             // segFileSizeCalculation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(519, 264);
+            this.ClientSize = new System.Drawing.Size(633, 264);
+            this.Controls.Add(this.textBoxNoOfAdditionalChan);
+            this.Controls.Add(this.label13);
             this.Controls.Add(this.checkBoxIncludeEBCDICBinHdr);
             this.Controls.Add(this.textBoxFileSizeReadable);
             this.Controls.Add(this.label12);
@@ -448,6 +471,8 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox textBoxFileSizeReadable;
         private System.Windows.Forms.CheckBox checkBoxIncludeEBCDICBinHdr;
+        private System.Windows.Forms.TextBox textBoxNoOfAdditionalChan;
+        private System.Windows.Forms.Label label13;
     }
 }
 
